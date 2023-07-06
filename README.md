@@ -19,7 +19,7 @@ Inventory  - I (Items are equipped with the mouse)
 Fire Focus - Left Mouse Button
 Swap Focus - Mouse Scroll
 Spell 1    - Q
-Spell 2    - R
+Spell 2    - Rr
 
 # Finally
 Let me know what you think!
