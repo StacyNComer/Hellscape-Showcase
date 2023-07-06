@@ -1,6 +1,8 @@
 # Hellscape-Showcase
 A version of the Hellscape Project edited for a public showcase. Due to the files being publically downloadable I had to replace the marketplace assets with placeholders. Mind the MSPaint!
 
+In addition to letting you see the source code, this showcase also lets you directly test the inventory system. It should even be easy to make your own weapons via new actors or blueprints.
+
 # Running the Project
 This project is made to be opened with the Unreal 4 Editor using version 4.26.2. Once this version is installed on your computer, you should be able to view the project by running the "Hellscape.uproject" file in the project's root directory.
 
