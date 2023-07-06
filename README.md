@@ -1,7 +1,7 @@
 # Hellscape-Showcase
-A version of the Hellscape Project edited for a public showcase. Due to the files being publically downloadable I had to replace the marketplace assets with placeholders. Mind the MSPaint!
+A version of the Hellscape Project edited for a public showcase. Due to the files being publically downloadable, I had to replace the marketplace assets with placeholders. Mind the MSPaint!
 
-In addition to letting you see the source code, this showcase also lets you directly test the inventory system. It should even be easy to make your own weapons via new actors or blueprints.
+In addition to letting you see the source code, this showcase also lets you directly test the weapon and inventory systems. It should even be easy to make your own weapons via new actors or blueprints.
 
 NOTE: Status effects are not implemented yet!
 
