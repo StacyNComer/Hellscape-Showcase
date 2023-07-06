@@ -28,10 +28,4 @@ public:
 	Toggles the visibility of the wand's mesh and any other effects that should appear when the wand is wielded
 	*/
 	virtual void SetWielded(bool isWielded);
-
-protected:
-
-	virtual void StartCasting_Implementation() override;
-
-	virtual void StopCasting_Implementation() override;
 };

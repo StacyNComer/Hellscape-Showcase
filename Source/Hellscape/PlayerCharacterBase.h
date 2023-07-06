@@ -207,9 +207,6 @@ public:
 		float SetStatusBuildup(EDamageType damageType, float value);
 
 	UFUNCTION(Blueprintcallable)
-		void FireWeapon(AWeaponBase* weapon);
-
-	UFUNCTION(Blueprintcallable)
 		/*Attempts to pick up an item or use an interactable if the player is aimed at one and in range.*/
 		void Interact();
 

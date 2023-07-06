@@ -15,13 +15,3 @@ void AFocusBase::SetWielded(bool isWielded)
 {
 	Mesh->SetVisibility(isWielded);
 }
-
-void AFocusBase::StartCasting_Implementation()
-{
-	isCasting = true;
-}
-
-void AFocusBase::StopCasting_Implementation()
-{
-	isCasting = false;
-}

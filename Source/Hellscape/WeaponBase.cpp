@@ -36,27 +36,18 @@ void AWeaponBase::SetDropState(bool isDropped)
 	isCasting = false;
 }
 
-void AWeaponBase::StartCasting_Implementation()
-{
-
-}
-
-void AWeaponBase::StopCasting_Implementation()
-{
-
-}
-
 bool AWeaponBase::CustomCastCheck_Implementation()
 {
 	return true;
 }
 
-//TODO (eventually): Add softmana cost.
+
 void AWeaponBase::Cast_Implementation()
 {
 	
 }
 
+//TODO (eventually): Add softmana cost.
 void AWeaponBase::AttemptCast()
 {
 	if (castDelayTracker > 0)
@@ -85,6 +76,25 @@ void AWeaponBase::AttemptCast()
 
 		Cast();
 	}
+}
+
+void AWeaponBase::SetIsCasting(bool casting)
+{
+	//Call Start/Stop casting, but only if the value is new.
+	if (casting != isCasting)
+	{
+		if (casting == true)
+		{
+			StartCasting();
+		}
+		else
+		{
+			StopCasting();
+		}
+	}
+
+	//Set isCasting.
+	isCasting = casting;
 }
 
 void AWeaponBase::UpdateStatModifier(FMultipliedStat& stat)

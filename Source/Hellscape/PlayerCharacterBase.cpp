@@ -82,23 +82,6 @@ void APlayerCharacterBase::Tick(float DeltaTime)
 
 	if (focusAxisSwapDelayTracker > 0)
 		focusAxisSwapDelayTracker -= DeltaTime;
-
-	//DrawDebugLine(GetWorld(), Camera->GetComponentLocation(), Camera->GetComponentLocation() + Camera->GetForwardVector() * 600, FColor::Red, false, 0.1f);
-
-	/*
-	FHitResult pickupHit;
-	if (GetWorld()->LineTraceSingleByObjectType
-	(
-		pickupHit,
-		Camera->GetComponentLocation(),
-		Camera->GetComponentLocation() + Camera->GetForwardVector() * interactRange,
-		FCollisionObjectQueryParams(ECC_PICKUP)
-	))
-	{
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("THOT DETECTED"));
-	}
-	*/
 }
 
 void APlayerCharacterBase::FireSpell(ASpellBase* spell)
@@ -281,7 +264,7 @@ void APlayerCharacterBase::FireWieldedFocus()
 	AFocusBase* toFire = GetFocusWielded();
 	if (toFire)
 	{
-		toFire->StartCasting();
+		toFire->SetIsCasting(true);
 	}
 }
 
@@ -290,7 +273,7 @@ void APlayerCharacterBase::StopFiringWieldedFocus()
 	AFocusBase* toFire = GetFocusWielded();
 	if (toFire)
 	{
-		toFire->StopCasting();
+		toFire->SetIsCasting(false);
 	}
 }
 
@@ -389,14 +372,15 @@ void APlayerCharacterBase::ToggleCharacterMenu()
 
 		UpdateInventoryWidget();
 		InventoryUI->SetVisibility(ESlateVisibility::Visible);
+
+		//Make sure the player isn't firing their focus while in a menu.
+		if (GetFocusWielded() != nullptr)
+		{
+			GetFocusWielded()->SetIsCasting(false);
+		}
 	}
 	
 	inCharacterMenu = !inCharacterMenu;
-}
-
-void APlayerCharacterBase::FireWeapon(AWeaponBase* weapon)
-{
-	weapon->StartCasting();
 }
 
 void APlayerCharacterBase::FireSpell1()
@@ -493,9 +477,12 @@ void APlayerCharacterBase::WieldFocusSlot(int32 slot)
 {
 	AFocusBase* focus = fociEquipped[slot]; //The game should never try and equip a focus slot with nothing in it!
 
+	//Unwield an already wielded focus and make sure it isn't casting.
 	if (GetFocusWielded() != nullptr)
 	{
-		GetFocusWielded()->SetWielded(false);
+		AFocusBase* focusWielded = GetFocusWielded();
+		focusWielded->SetIsCasting(false);
+		focusWielded->SetWielded(false);
 	}
 
 	focusSlotWielded = slot;
@@ -525,9 +512,10 @@ void APlayerCharacterBase::PickupItem(AItemBase* item)
 	}
 }
 
+
 void APlayerCharacterBase::DropItem(int32 index)
 {
-
+	//NOT YET IN GAME!
 }
 
 int APlayerCharacterBase::GetInventorySize()
