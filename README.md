@@ -13,13 +13,20 @@ DO NOT use the Unreal Editor's "Compile" button, as this is prone to giving you 
 
 # Controls
 Movement   - WASD
+
 Jump       - SPACE (You can double jump)
+
 Pickup     - E
+
 Inventory  - I (Items are equipped with the mouse)
+
 Fire Focus - Left Mouse Button
+
 Swap Focus - Mouse Scroll
+
 Spell 1    - Q
-Spell 2    - Rr
+
+Spell 2    - R
 
 # Finally
 Let me know what you think!
