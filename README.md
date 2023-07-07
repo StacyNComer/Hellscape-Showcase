@@ -32,6 +32,10 @@ The source code should already be compiled in this project. However if you would
 
 DO NOT use the Unreal Editor's "Compile" button, as this is prone to giving you compile errors for no apparent reason.
 
+# How Do I Add New Weapon Types?
+
+View this page here: https://github.com/StacyNComer/Hellscape-Showcase/wiki/Creating-New-Weapons
+
 # FAQ
 _What is a "foci"?_
 
