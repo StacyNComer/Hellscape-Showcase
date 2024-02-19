@@ -3,7 +3,7 @@ A version of the Hellscape Project edited for a public showcase. Due to the file
 
 In addition to letting you see the source code, this showcase also lets you directly test the weapon and inventory systems. It should even be easy to make your own weapons via new actors or blueprints.
 
-The C++ files can be found in Content/Source/Hellscape.
+The C++ files can be found in Source/Hellscape.
 
 NOTE: Status effects are not implemented yet!
 
